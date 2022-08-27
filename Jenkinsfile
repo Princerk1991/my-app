@@ -1,13 +1,8 @@
-pipeline {
-  agent any
-  tools {
-    maven 'maven3'
-  }
-  stages{
-    stage("Maven Build"){
-      steps{
-        sh "mvn clean package"
-      }
-    }
+
+
+node{
+  stage('Git Checkout'){
+      git url: 'https://github.com/Princerk1991/my-app',
+          branch:'master'
   }
 }
